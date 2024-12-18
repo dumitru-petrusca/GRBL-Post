@@ -31,8 +31,8 @@
 :MACRO_ROTATE_Y=FALSE
 :MACRO_ROTATE_Z=FALSE
 :LENGTH_DIAM_OFFSET_FROM_TOOL=FALSE
-:ALLOW_LONG_CODE_DRILLING_CYCLES=FALSE
-:ALLOW_GUN_DRILLING=FALSE
+:ALLOW_LONG_CODE_DRILLING_CYCLES=TRUE
+:ALLOW_GUN_DRILLING=TRUE
 :ALLOW_GUN_DRILLING_CANNED_CYCLE=FALSE
 :WORLD_POSITIONING=FALSE
 :NO_SET_FILE=FALSE
@@ -47,7 +47,7 @@
 :ATTRSEL=N
 :ATTRINLEN=60
 :ATTRSHORT=Machine Name
-:ATTRDEFAULT=RSCNC32
+:ATTRDEFAULT=GENERIC-MILL
 :CODETYPE=FORMAT
 :WORD_ADDRESS_BEF=|(|MACHINE=
 :WORD_ADDRESS_AFT=|)
@@ -63,7 +63,7 @@
 :ATTRSEL=N
 :ATTRINLEN=60
 :ATTRSHORT=Controller Type
-:ATTRDEFAULT=GRBL
+:ATTRDEFAULT=FLUIDNC
 :CODETYPE=FORMAT
 :WORD_ADDRESS_BEF=|(|CONTROLLER=
 :WORD_ADDRESS_AFT=|)
@@ -88,7 +88,7 @@
 :ATTRSEL=N
 :ATTRINLEN=10
 :ATTRSHORT=Traverse Rate
-:ATTRDEFAULT=2500
+:ATTRDEFAULT=1500
 :ATTREND
 *-----------------------------------
 :ATTRNAME=SYS LICENSE
@@ -156,54 +156,100 @@
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=DRILLING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=SPOT_DRILLING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
+:OPERLIST=dwell
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=PECKING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=TAPPING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
+:OPERLIST=rigid tap
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=BORING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=HIGH_SPEED_PECKING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=VARIABLE_PECKING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=REVERSE_TAPPING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
+:OPERLIST=rigid tap
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=REAMING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=REAMING_DWELL
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
+:OPERLIST=dwell
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=BORE_DWELL
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
+:OPERLIST=dwell
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=BACK_BORING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
+:OPERLIST=shift amount
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_DRILLING
 :OPERSUB=FINE_BORING
+:OPERLIST=abs inc
+:OPERLIST=work coord
+:OPERLIST=coolant
+:OPERLIST=shift amount
 :OPEREND
 *-----------------------------------
 :OPERID=MILL_LACE
@@ -542,7 +588,7 @@
 :T:(Start of Tape)<EOL>
 :T:<BLANK><EOL>
 :T:(Made in : UPC)<EOL>
-:T:(G Code optimized for RS-CNC32 with GRBL V0.9j controller)<EOL>
+:T:(FluidNC controller)<EOL>
 :T:<BLANK><EOL>
 :T:<S_PART_NUMBER><EOL>
 :T:<S_PART_NAME><EOL>
